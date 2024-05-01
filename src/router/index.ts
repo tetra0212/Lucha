@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
 import Salon from '@/views/Salon.vue'
 import Menu from '@/views/Menu.vue'
-import Gallery from '@/views/Gallery.vue'
+import News from '@/views/News.vue'
 import Blog from '@/views/Blog.vue'
 import Access from '@/views/Access.vue'
 import Recruit from '@/views/Recruit.vue'
@@ -27,9 +27,9 @@ const router = createRouter({
       component: Menu
     },
     {
-      path: '/gallery',
-      name: 'gallery',
-      component: Gallery
+      path: '/news',
+      name: 'news',
+      component: News
     },
     {
       path: '/blog',
@@ -46,7 +46,14 @@ const router = createRouter({
       name: 'recruit',
       component: Recruit
     },
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
+    }
+  }
 })
 
 export default router
