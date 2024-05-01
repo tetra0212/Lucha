@@ -9,7 +9,7 @@ import Recruit from '@/views/Recruit.vue'
 
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory('/dist/'),
   routes: [
     {
       path: '/',
