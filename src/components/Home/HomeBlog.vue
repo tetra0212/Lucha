@@ -8,8 +8,15 @@
         class="mx-6 flex flex-col items-center justify-center"
       >
         <img
+          v-if="blog.imageUrl"
           decoding="async"
-          :src="blog.imageUrl[0]"
+          :src="blog.imageUrl.url"
+          class="mb-2 h-[200px] w-[200px] border-2 border-lucha-blue bg-lucha-main1 p-2"
+        />
+        <img
+          v-if="!blog.imageUrl"
+          decoding="async"
+          src="@/assets/logo2.png"
           class="mb-2 h-[200px] w-[200px] border-2 border-lucha-blue bg-lucha-main1 p-2"
         />
         <p class="text-sm font-medium text-gray-500">
@@ -32,18 +39,18 @@ type Blog = {
   id: string;
   title: string;
   content: string;
-  imageUrl: string;
+  imageUrl: Thumbnail;
   publishedAt: Date;
   categoryId: string;
 };
-const blogList: Ref<Blog[]> = ref([]);
 
-const extractLink = (text: string) => {
-  const reg =
-    /https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/gi;
-  const ulr = text?.match(reg);
-  return ulr ? ulr : ["/src/assets/logo2.png"];
+type Thumbnail = {
+  url: string;
+  height: string;
+  width: string;
 };
+
+const blogList: Ref<Blog[]> = ref([]);
 
 onMounted(() => {
   axios
@@ -62,7 +69,7 @@ onMounted(() => {
               id: blog.id,
               title: blog.title,
               content: blog.content,
-              imageUrl: extractLink(blog.content),
+              imageUrl: blog.thumbnail,
               publishedAt: new Date(blog.publishedAt),
               categoryId: blog.category.id,
             };
