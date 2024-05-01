@@ -93,5 +93,5 @@
 </template>
 
 <script setup lang="ts">
-import Button1 from "@/components/Button1.vue";
+import Button1 from "@/components/Button/Button1.vue";
 </script>

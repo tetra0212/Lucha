@@ -22,7 +22,7 @@
 <script setup lang="ts">
 import axios from "axios";
 import { onMounted, ref, type Ref } from "vue";
-import Button2 from "../Button2.vue";
+import Button2 from "@/components/Button/Button2.vue";
 type Blog = {
   id: string;
   title: string;
@@ -56,3 +56,4 @@ onMounted(() => {
     .catch((error) => console.log(error));
 });
 </script>
+../Button/Button2.vue
