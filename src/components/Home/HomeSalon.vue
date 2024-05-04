@@ -1,6 +1,6 @@
 <template>
   <div class="my-16 w-full max-w-5xl">
-    <div class="mb-16 ml-2 mr-10 flex items-center justify-around">
+    <div class="fade1 mb-16 ml-2 mr-10 flex items-center justify-around">
       <img decoding="async" src="@/assets/salon01.png" class="w-[300px]" />
 
       <div class="ml-2 w-[450px]">
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <div class="mb-16 ml-10 mr-2 flex items-center justify-around">
+    <div class="fade2 mb-16 ml-10 mr-2 flex items-center justify-around">
       <div class="mr-2 w-[450px]">
         <p
           class="mb-4 flex justify-center border-b-2 border-b-lucha-blue text-lg font-medium"
@@ -58,7 +58,7 @@
       <img decoding="async" src="@/assets/salon02.png" class="w-[300px]" />
     </div>
 
-    <div class="ml-2 mr-10 flex items-center justify-around">
+    <div class="fade3 ml-2 mr-10 flex items-center justify-around">
       <img decoding="async" src="@/assets/salon03.png" class="w-[300px]" />
 
       <div class="ml-2 w-[450px]">
@@ -94,4 +94,50 @@
 
 <script setup lang="ts">
 import Button2 from "@/components/Button/Button2.vue";
+import { onMounted } from "vue";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  gsap.fromTo(
+    ".fade1",
+    {
+      autoAlpha: 0, // アニメーション開始前は透明
+    },
+    {
+      autoAlpha: 1, // アニメーション後に出現(透過率0)
+      scrollTrigger: {
+        trigger: ".fade1", // アニメーションが始まるトリガーとなる要素
+        start: "top center+=10%", // アニメーションの開始位置
+      },
+    },
+  );
+  gsap.fromTo(
+    ".fade2",
+    {
+      autoAlpha: 0, // アニメーション開始前は透明
+    },
+    {
+      autoAlpha: 1, // アニメーション後に出現(透過率0)
+      scrollTrigger: {
+        trigger: ".fade2", // アニメーションが始まるトリガーとなる要素
+        start: "top center+=10%", // アニメーションの開始位置
+      },
+    },
+  );
+  gsap.fromTo(
+    ".fade3",
+    {
+      autoAlpha: 0, // アニメーション開始前は透明
+    },
+    {
+      autoAlpha: 1, // アニメーション後に出現(透過率0)
+      scrollTrigger: {
+        trigger: ".fade3", // アニメーションが始まるトリガーとなる要素
+        start: "top center+=10%", // アニメーションの開始位置
+      },
+    },
+  );
+});
 </script>

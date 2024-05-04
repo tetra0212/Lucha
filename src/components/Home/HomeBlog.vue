@@ -5,11 +5,11 @@
     >
       Blog
     </p>
-    <div class="mb-2 flex w-full items-center">
+    <div class="mb-2 flex w-full flex-wrap items-center justify-center">
       <RouterLink
         to="/"
         v-for="blog in getHomeBlog"
-        class="mx-6 flex flex-col items-center justify-center"
+        class="mx-6 flex flex-col items-center justify-center hover:opacity-50"
       >
         <img
           v-if="blog.imageUrl"
@@ -28,7 +28,7 @@
           {{ blog.publishedAt.getMonth() + 1 + "." }}
           {{ blog.publishedAt.getDate() }}
         </p>
-        <p class="text-base font-medium">{{ blog.title }}</p>
+        <p class="mb-2 text-base font-medium">{{ blog.title }}</p>
       </RouterLink>
     </div>
     <Button2 to="/blog" text="ブログをもっと見る" class="mt-2" />

@@ -9,7 +9,7 @@
     <RouterLink
       to="/"
       v-for="news in getHomeNews"
-      class="m-1 h-[65px] w-full max-w-4xl border border-lucha-blue bg-lucha-main1 p-2"
+      class="m-1 h-[65px] w-full max-w-4xl border border-lucha-blue bg-lucha-main1 p-2 hover:opacity-50"
     >
       <p class="text-base font-medium">{{ news.title }}</p>
     </RouterLink>

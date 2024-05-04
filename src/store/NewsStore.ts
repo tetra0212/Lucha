@@ -26,7 +26,7 @@ export const useNewsStore = defineStore(
       getHomeBlog: state =>
         state.contents
         .filter((blog) => blog.category.id === "ftnz1ahl9a")
-        .slice(0, 3)
+        .slice(0, 6)
         .map((blog) => {
           return {
             title: blog.title,
