@@ -8,13 +8,13 @@
     <div class="mb-2 flex w-full items-center">
       <RouterLink
         to="/"
-        v-for="blog in blogList"
+        v-for="blog in getHomeBlog"
         class="mx-6 flex flex-col items-center justify-center"
       >
         <img
           v-if="blog.imageUrl"
           decoding="async"
-          :src="blog.imageUrl.url"
+          :src="blog.imageUrl"
           class="mb-2 h-[200px] w-[200px] border-2 border-lucha-blue bg-lucha-main1 object-cover p-2"
         />
         <img
@@ -36,50 +36,10 @@
 </template>
 
 <script setup lang="ts">
-import axios from "axios";
-import { onMounted, ref, type Ref } from "vue";
 import Button2 from "@/components/Button/Button2.vue";
+import { useNewsStore } from "@/store/NewsStore";
+import { storeToRefs } from "pinia";
 
-type Blog = {
-  id: string;
-  title: string;
-  content: string;
-  imageUrl: Thumbnail;
-  publishedAt: Date;
-  categoryId: string;
-};
-
-type Thumbnail = {
-  url: string;
-  height: string;
-  width: string;
-};
-
-const blogList: Ref<Blog[]> = ref([]);
-
-onMounted(() => {
-  axios
-    .get("https://wdrq6z495s.microcms.io/api/v1/news", {
-      headers: {
-        "X-MICROCMS-API-KEY": import.meta.env.VITE_HEADLESS_CMS_API_KEY,
-      },
-    })
-    .then(
-      (response) =>
-        (blogList.value = response.data.contents
-          .filter((blog: any) => blog.category.id === "ftnz1ahl9a")
-          .slice(0, 3)
-          .map((blog: any) => {
-            return {
-              id: blog.id,
-              title: blog.title,
-              content: blog.content,
-              imageUrl: blog.thumbnail,
-              publishedAt: new Date(blog.publishedAt),
-              categoryId: blog.category.id,
-            };
-          })),
-    )
-    .catch((error) => console.log(error));
-});
+const newsStore = useNewsStore();
+const { getHomeBlog } = storeToRefs(newsStore);
 </script>
