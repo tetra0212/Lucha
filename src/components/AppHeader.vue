@@ -15,9 +15,9 @@
       <div class="mx-2 flex items-center justify-center">
         <HeaderLink to="/" text="HOME" subtext="ホーム" />
         <HeaderLink to="/salon" text="SALON" subtext="サロン" />
+        <HeaderLink to="/menu" text="MENU" subtext="メニュー" />
         <HeaderLink to="/news" text="NEWS" subtext="ニュース" />
         <HeaderLink to="/blog" text="BLOG" subtext="ブログ" />
-        <HeaderLink to="/menu" text="MENU" subtext="メニュー" />
         <HeaderLink to="/access" text="ACCESS" subtext="アクセス" />
         <HeaderLink to="/recruit" text="RECRUIT" subtext="求人" />
       </div>

@@ -18,7 +18,7 @@
             <p class="mx-12 mb-4 text-sm font-medium">
               地中海をモチーフにした落ち着いた空間でお客様と向き合い、ご自宅に帰られた後も再現しやすいスタイリングを心がけています。
             </p>
-            <Button1
+            <Button2
               class="col-start-2"
               to="salon"
               text="コンセプトをもっとみる"
@@ -46,7 +46,7 @@
             <p class="mx-12 mb-2 text-sm font-medium">
               カウンセリングを大切にして、毎朝楽にまとまるスタイルを提案します。楽しい時間をお届けしたいです。
             </p>
-            <Button1
+            <Button2
               class="col-start-2"
               to="salon"
               text="スタイリストをもっとみる"
@@ -80,7 +80,7 @@
             <p class="mx-12 mb-4 text-sm font-medium">
               カラーやパーマはこだわった薬剤を使用しており頭皮に低刺激です。
             </p>
-            <Button1
+            <Button2
               class="col-start-2"
               to="menu"
               text="メニューをもっとみる"
@@ -93,5 +93,5 @@
 </template>
 
 <script setup lang="ts">
-import Button1 from "@/components/Button/Button1.vue";
+import Button2 from "@/components/Button/Button2.vue";
 </script>

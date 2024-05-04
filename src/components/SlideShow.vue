@@ -67,11 +67,11 @@ const router = useRouter();
   }
   20% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1.15);
   }
   30% {
     opacity: 0;
-    transform: scale(1);
+    transform: scale(1.15);
   }
   95% {
     opacity: 0;
@@ -89,11 +89,11 @@ const router = useRouter();
   }
   20% {
     opacity: 0;
-    transform: scale(1);
+    transform: scale(1.15);
   }
   25% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1.15);
   }
   45% {
     opacity: 1;
@@ -123,11 +123,11 @@ const router = useRouter();
   }
   70% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1.15);
   }
   75% {
     opacity: 0;
-    transform: scale(1);
+    transform: scale(1.15);
   }
   100% {
     opacity: 0;
@@ -141,11 +141,11 @@ const router = useRouter();
   }
   70% {
     opacity: 0;
-    transform: scale(1);
+    transform: scale(1.15);
   }
   75% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1.15);
   }
   95% {
     opacity: 1;

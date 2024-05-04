@@ -1,11 +1,15 @@
 <template>
   <div class="mx-2 my-16 flex w-full flex-col items-center">
-    <p class="mb-4 text-lg font-medium">NEWS</p>
+    <p
+      class="mb-4 flex w-[450px] items-center justify-center border-b-2 border-b-lucha-blue text-lg font-medium"
+    >
+      NEWS
+    </p>
 
     <RouterLink
       to="/"
       v-for="blog in blogList"
-      class="m-1 w-full max-w-4xl border border-lucha-blue bg-lucha-main1 p-2"
+      class="m-1 h-[65px] w-full max-w-4xl border border-lucha-blue bg-lucha-main1 p-2"
     >
       <p class="text-sm font-medium text-gray-500">
         {{ blog.publishedAt.getFullYear() + "." }}
@@ -23,6 +27,7 @@
 import axios from "axios";
 import { onMounted, ref, type Ref } from "vue";
 import Button2 from "@/components/Button/Button2.vue";
+
 type Blog = {
   id: string;
   title: string;
@@ -30,6 +35,7 @@ type Blog = {
   publishedAt: Date;
   categoryId: string;
 };
+
 const blogList: Ref<Blog[]> = ref([]);
 onMounted(() => {
   axios
@@ -56,4 +62,3 @@ onMounted(() => {
     .catch((error) => console.log(error));
 });
 </script>
-../Button/Button2.vue
