@@ -16,7 +16,7 @@ init();
 </script>
 
 <template>
-  <AppHeader class="bg-lucha-base" />
+  <AppHeader />
   <RouterView />
   <AppFooter />
 </template>

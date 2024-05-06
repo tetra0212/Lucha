@@ -1,6 +1,6 @@
 <template>
   <div
-    class="border-b-gray sticky top-0 z-50 flex w-full justify-center border-b"
+    class="border-b-gray sticky top-0 z-50 flex w-full justify-center border-b bg-lucha-base"
   >
     <div class="flex w-full max-w-7xl items-end justify-between">
       <RouterLink to="/">

@@ -1,14 +1,14 @@
 <template>
   <RouterLink
     :to="props.to"
-    class="border-b-4 border-b-lucha-blue border-opacity-0 p-2 text-base text-black transition-none hover:text-lucha-blue"
+    class="group border-b-4 border-b-lucha-blue border-opacity-0 p-2 text-base text-black transition-none"
     :class="{
       'border-opacity-100 text-black':
         router.currentRoute.value.path === props.to,
     }"
   >
     <div class="flex flex-col items-end justify-center text-base">
-      <a class="font-medium">{{ props.text }}</a>
+      <a class="font-medium group-hover:opacity-50">{{ props.text }}</a>
     </div>
   </RouterLink>
 </template>
